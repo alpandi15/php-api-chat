@@ -21,6 +21,7 @@ class MessegeNotificationResource extends JsonResource
             'pengirim' => $message->pengirim,
             'penerima' => $message->penerima,
             'pesan' => $message->pesan,
+            'client_ref_id' => $message->client_ref_id,
             'read_at' => $message->read_at ? Carbon::parse($message->read_at)->isoFormat('DD/MM/YYYY HH:mm') : null,
             'created_at' => Carbon::parse($message->created_at)->isoFormat('DD/MM/YYYY HH:mm'),
             'timestamp' => Carbon::parse($message->created_at)->timestamp,

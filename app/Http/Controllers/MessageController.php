@@ -91,7 +91,8 @@ class MessageController extends Controller
         $message = Message::create([
             'pengirim' => auth()->id(),
             'penerima' => $user_id,
-            'pesan' => $request->pesan
+            'pesan' => $request->pesan,
+            'client_ref_id' => $request->client_ref_id
         ]);
 
         return response()->json(['message' => $message]);

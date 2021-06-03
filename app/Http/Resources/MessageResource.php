@@ -20,6 +20,7 @@ class MessageResource extends JsonResource
             'pengirim' => $this->pengirim,
             'penerima' => $this->penerima,
             'pesan' => $this->pesan,
+            'client_ref_id' => $this->client_ref_id,
             'read_at' => $this->read_at ? Carbon::parse($this->read_at)->isoFormat('DD/MM/YYYY HH:mm') : null,
             'created_at' => Carbon::parse($this->created_at)->isoFormat('DD/MM/YYYY HH:mm'),
             'timestamp' => Carbon::parse($this->created_at)->timestamp,
