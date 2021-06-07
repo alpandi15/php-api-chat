@@ -31,7 +31,7 @@ class UserController extends Controller
             }
         }
 
-        return response()->json($users);
+        return response()->json(['data' => $users]);
     }
 
     public static function userOnlineStatusFind($user_id)
