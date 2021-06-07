@@ -40,7 +40,7 @@ class AuthController extends Controller
         DB::beginTransaction();
         try{
             User::create([
-                'name' => $request->username,
+                'name' => $request->name,
                 'username' => $request->username,
                 'password' => bcrypt($request->password)
             ]);
