@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\FriendResources;
 use App\Models\User;
+use App\Models\Contact;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -75,4 +77,16 @@ class AuthController extends Controller
 
         return UserResource::collection($users);
     }
+
+    public function get_all_user()
+    {
+        $user = auth()->user();
+        $friends = User::with('friendd', 'mee')
+        ->where('id', '!=', $user->id)
+        ->get();
+
+        return FriendResources::collection($friends);
+        // return response(['data' => $friends], 200);
+    }
+
 }

@@ -53,4 +53,13 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function mee()
+    {
+        return $this->belongsTo(Contact::class, 'id', 'me');
+    }
+    public function friendd()
+    {
+        return $this->belongsTo(Contact::class, 'id', 'friend');
+    }
 }

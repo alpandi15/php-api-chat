@@ -26,6 +26,7 @@ Route::get('all-user', [AuthController::class, 'all_user']);
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('user', [AuthController::class, 'user']);
+    Route::get('get-all-user', [AuthController::class, 'get_all_user']);
     Route::get('close/window', [UserController::class, 'closeWindow']);
     Route::get('check/online', [UserController::class, 'userOnlineStatus']);
 
